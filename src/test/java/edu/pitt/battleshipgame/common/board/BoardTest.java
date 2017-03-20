@@ -6,6 +6,7 @@
 package edu.pitt.battleshipgame.common.board;
 
 import edu.pitt.battleshipgame.common.ships.Ship;
+import java.util.LinkedList;
 import static org.mockito.Mockito.*;
 import java.util.List;
 import org.junit.After;
@@ -15,7 +16,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.mockito.Mockito;
-//tests
+
 /**
  *
  * @author Luke
@@ -97,7 +98,7 @@ public class BoardTest {
      * Test of addShip method, of class Board.
      */
     @Test
-    public void testAddShip() {
+    public void testAddBattleShip() {
         //System.out.println("addShip");
         Ship ship = Mockito.mock(Ship.class);
         Board instance = new Board("test");
@@ -110,19 +111,77 @@ public class BoardTest {
         assertFalse(instance.getShipList().isEmpty());
     }
 
+        @Test
+    public void testAddCarrier() {
+        //System.out.println("addShip");
+        Ship ship = Mockito.mock(Ship.class);
+        Board instance = new Board("test");
+        
+        when(ship.getType()).thenReturn(Ship.ShipType.CARRIER);
+        when(ship.maxAllowed()).thenReturn(1);
+        instance.addShip(ship);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        assertFalse(instance.getShipList().isEmpty());
+    }
+    
+        @Test
+    public void testAddCruiser() {
+        //System.out.println("addShip");
+        Ship ship = Mockito.mock(Ship.class);
+        Board instance = new Board("test");
+        
+        when(ship.getType()).thenReturn(Ship.ShipType.CRUISER);
+        when(ship.maxAllowed()).thenReturn(1);
+        instance.addShip(ship);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        assertFalse(instance.getShipList().isEmpty());
+    }
+    
+        @Test
+    public void testAddDestroyer() {
+        //System.out.println("addShip");
+        Ship ship = Mockito.mock(Ship.class);
+        Board instance = new Board("test");
+        
+        when(ship.getType()).thenReturn(Ship.ShipType.DESTROYER);
+        when(ship.maxAllowed()).thenReturn(1);
+        instance.addShip(ship);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        assertFalse(instance.getShipList().isEmpty());
+    }
+    
+        @Test
+    public void testAddSubmarine() {
+        //System.out.println("addShip");
+        Ship ship = Mockito.mock(Ship.class);
+        Board instance = new Board("test");
+        
+        when(ship.getType()).thenReturn(Ship.ShipType.SUBMARINE);
+        when(ship.maxAllowed()).thenReturn(1);
+        instance.addShip(ship);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        assertFalse(instance.getShipList().isEmpty());
+    }
     /**
      * Test of makeMove method, of class Board.
      */
     @Test
     public void testMakeMove() {
-        System.out.println("makeMove");
-        Coordinate move = null;
-        Board instance = null;
-        Ship expResult = null;
-        Ship result = instance.makeMove(move);
-        assertEquals(expResult, result);
+        //System.out.println("makeMove");
+        Coordinate move = Mockito.mock(Coordinate.class);
+        Board instance = new Board("test");
+        
+        when(move.getRow()).thenReturn(1);
+        when(move.getCol()).thenReturn(1);
+        instance.makeMove(move);
+        boolean[][] moves = instance.getMoves();
+        assertTrue(moves[1][1]);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -130,14 +189,19 @@ public class BoardTest {
      */
     @Test
     public void testCanShipFit() {
-        System.out.println("canShipFit");
-        Ship ship = null;
-        Board instance = null;
-        boolean expResult = false;
-        boolean result = instance.canShipFit(ship);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //System.out.println("canShipFit");
+        Ship ship = Mockito.mock(Ship.class);
+        Board instance = new Board("test");
+        
+        when(ship.getType()).thenReturn(Ship.ShipType.SUBMARINE);
+        when(ship.maxAllowed()).thenReturn(1);
+        boolean can_fit = instance.canShipFit(ship);
+        assertTrue(can_fit);
+        
+        
+        
+        
+        
     }
 
     /**
@@ -145,56 +209,93 @@ public class BoardTest {
      */
     @Test
     public void testGetShipList() {
-        System.out.println("getShipList");
-        Board instance = null;
-        List<Ship> expResult = null;
+        
+        Board instance = new Board("test");
+        //List<Ship> expResult = null;
+        Ship ship = Mockito.mock(Ship.class);
+        when(ship.getType()).thenReturn(Ship.ShipType.SUBMARINE);
+        when(ship.maxAllowed()).thenReturn(1);
+        instance.addShip(ship);
         List<Ship> result = instance.getShipList();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("RESULT!!!! " + result.toString());
+        assertNotNull(result);
+        
     }
 
     /**
      * Test of areAllShipsSunk method, of class Board.
      */
     @Test
-    public void testAreAllShipsSunk() {
-        System.out.println("areAllShipsSunk");
-        Board instance = null;
+    public void testAreAllShipsSunkFalse() {
+        //System.out.println("areAllShipsSunk");
+        Board instance = new Board("test");
+        Ship ship = Mockito.mock(Ship.class);
+        when(ship.getType()).thenReturn(Ship.ShipType.CRUISER);
+        when(ship.maxAllowed()).thenReturn(1);
+        instance.addShip(ship);
+        when(ship.isSunk()).thenReturn(false);
         boolean expResult = false;
         boolean result = instance.areAllShipsSunk();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
+    
+    @Test
+    public void testAreAllShipsSunkTrue() {
+        //System.out.println("areAllShipsSunk");
+        Board instance = new Board("test");
+        Ship ship = Mockito.mock(Ship.class);
+        when(ship.getType()).thenReturn(Ship.ShipType.CRUISER);
+        when(ship.maxAllowed()).thenReturn(1);
+        instance.addShip(ship);
+        when(ship.isSunk()).thenReturn(true);
+        boolean expResult = true;
+        boolean result = instance.areAllShipsSunk();
+        assertEquals(expResult, result);
+        
+    }
+
+    
 
     /**
      * Test of toString method, of class Board.
      */
     @Test
-    public void testToString_0args() {
-        System.out.println("toString");
-        Board instance = null;
+    public void testToString_true() {
+        //System.out.println("toString");
+       
+        Board instance = new Board("test");
+        Coordinate coord = Mockito.mock(Coordinate.class);
+        when(coord.getRow()).thenReturn(5);
+        when(coord.getCol()).thenReturn(5);
+        //add cruiser 
+        Ship ship = Mockito.mock(Ship.class);
+        when(ship.getType()).thenReturn(Ship.ShipType.CRUISER);
+        when(ship.maxAllowed()).thenReturn(1);
+        instance.addShip(ship);
         String expResult = "";
-        String result = instance.toString();
+        String result = instance.toString(true);
+        System.out.println("RESULT " + result);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
-
-    /**
-     * Test of toString method, of class Board.
-     */
-    @Test
-    public void testToString_boolean() {
-        System.out.println("toString");
-        boolean showShips = false;
-        Board instance = null;
+    
+     @Test
+    public void testToString_false() {
+        Board instance = new Board("test");
+        Coordinate coord = Mockito.mock(Coordinate.class);
+        when(coord.getRow()).thenReturn(1);
+        when(coord.getCol()).thenReturn(1);
+        //add cruiser 
+        Ship ship = Mockito.mock(Ship.class);
+        when(ship.getType()).thenReturn(Ship.ShipType.CRUISER);
+        when(ship.maxAllowed()).thenReturn(1);
+        instance.addShip(ship);
         String expResult = "";
-        String result = instance.toString(showShips);
+        String result = instance.toString(true);
+        System.out.println("RESULT " + result);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
