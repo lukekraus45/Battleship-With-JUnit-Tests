@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: edu.pitt.battleshipgame.common.board.BoardSuite
 -------------------------------------------------------------------------------
-Tests run: 18, Failures: 1, Errors: 13, Skipped: 0, Time elapsed: 0.358 sec <<< FAILURE!
-testSetCoordinates(edu.pitt.battleshipgame.common.board.CoordinateTest)  Time elapsed: 0.011 sec  <<< ERROR!
+Tests run: 18, Failures: 1, Errors: 13, Skipped: 0, Time elapsed: 0.39 sec <<< FAILURE!
+testSetCoordinates(edu.pitt.battleshipgame.common.board.CoordinateTest)  Time elapsed: 0.014 sec  <<< ERROR!
 java.lang.NullPointerException
 	at edu.pitt.battleshipgame.common.board.CoordinateTest.testSetCoordinates(CoordinateTest.java:48)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -94,7 +94,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-testColumnLookup(edu.pitt.battleshipgame.common.board.CoordinateTest)  Time elapsed: 0 sec  <<< ERROR!
+testColumnLookup(edu.pitt.battleshipgame.common.board.CoordinateTest)  Time elapsed: 0.001 sec  <<< ERROR!
 java.lang.NullPointerException
 	at edu.pitt.battleshipgame.common.board.Coordinate.columnLookup(Coordinate.java:90)
 	at edu.pitt.battleshipgame.common.board.CoordinateTest.testColumnLookup(CoordinateTest.java:115)
@@ -233,7 +233,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-testReverseColumnLookup(edu.pitt.battleshipgame.common.board.CoordinateTest)  Time elapsed: 0.003 sec  <<< FAILURE!
+testReverseColumnLookup(edu.pitt.battleshipgame.common.board.CoordinateTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: expected:<32> but was:<97>
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
@@ -375,7 +375,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-testToString_0args(edu.pitt.battleshipgame.common.board.BoardTest)  Time elapsed: 0.002 sec  <<< ERROR!
+testToString_0args(edu.pitt.battleshipgame.common.board.BoardTest)  Time elapsed: 0.003 sec  <<< ERROR!
 java.lang.NullPointerException
 	at edu.pitt.battleshipgame.common.board.BoardTest.testToString_0args(BoardTest.java:179)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -513,7 +513,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-testMakeMove(edu.pitt.battleshipgame.common.board.BoardTest)  Time elapsed: 0.005 sec  <<< ERROR!
+testMakeMove(edu.pitt.battleshipgame.common.board.BoardTest)  Time elapsed: 0.002 sec  <<< ERROR!
 java.lang.NullPointerException
 	at edu.pitt.battleshipgame.common.board.BoardTest.testMakeMove(BoardTest.java:122)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -605,7 +605,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-testAreAllShipsSunk(edu.pitt.battleshipgame.common.board.BoardTest)  Time elapsed: 0.001 sec  <<< ERROR!
+testAreAllShipsSunk(edu.pitt.battleshipgame.common.board.BoardTest)  Time elapsed: 0.004 sec  <<< ERROR!
 java.lang.NullPointerException
 	at edu.pitt.battleshipgame.common.board.BoardTest.testAreAllShipsSunk(BoardTest.java:165)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
