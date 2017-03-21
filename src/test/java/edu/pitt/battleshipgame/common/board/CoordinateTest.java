@@ -42,12 +42,14 @@ public class CoordinateTest {
      */
     @Test
     public void testSetCoordinates() {
-        System.out.println("setCoordinates");
-        String coord = "";
-        Coordinate instance = null;
-        instance.setCoordinates(coord);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
+        Coordinate instance = new Coordinate(0,0);
+        
+        Coordinate test = new Coordinate(2,2);
+        test.setCoordinates("a:1");
+        //System.out.println("test " + test.toString() + "instance " + instance.toString());
+        assertEquals(test.toString(),instance.toString());
+       
     }
 
     /**
@@ -55,12 +57,15 @@ public class CoordinateTest {
      */
     @Test
     public void testSetCol() {
-        System.out.println("setCol");
+        
         int _col = 0;
-        Coordinate instance = null;
+        Coordinate instance = new Coordinate(5,5);
         instance.setCol(_col);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        boolean working = false;
+        if(instance.getCol() == 0){
+        working = true;
+        }
+        assertTrue(working);
     }
 
     /**
@@ -68,12 +73,14 @@ public class CoordinateTest {
      */
     @Test
     public void testSetRow() {
-        System.out.println("setRow");
         int _row = 0;
-        Coordinate instance = null;
+        Coordinate instance = new Coordinate(5,5);
         instance.setRow(_row);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        boolean working = false;
+        if(instance.getRow() == 0){
+        working = true;
+        }
+        assertTrue(working);
     }
 
     /**
@@ -81,13 +88,14 @@ public class CoordinateTest {
      */
     @Test
     public void testGetRow() {
-        System.out.println("getRow");
-        Coordinate instance = null;
-        int expResult = 0;
-        int result = instance.getRow();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        Coordinate instance = new Coordinate(4,5);
+        
+        boolean working = false;
+        if(instance.getRow() == 4){
+        working = true;
+        }
+        assertTrue(working);
     }
 
     /**
@@ -95,55 +103,18 @@ public class CoordinateTest {
      */
     @Test
     public void testGetCol() {
-        System.out.println("getCol");
-        Coordinate instance = null;
-        int expResult = 0;
-        int result = instance.getCol();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+         Coordinate instance = new Coordinate(4,5);
+        
+        boolean working = false;
+        if(instance.getCol() == 5){
+        working = true;
+        }
+        assertTrue(working);
     }
 
-    /**
-     * Test of columnLookup method, of class Coordinate.
-     */
-    @Test
-    public void testColumnLookup() {
-        System.out.println("columnLookup");
-        char colName = ' ';
-        int expResult = 0;
-        int result = Coordinate.columnLookup(colName);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of reverseColumnLookup method, of class Coordinate.
-     */
-    @Test
-    public void testReverseColumnLookup() {
-        System.out.println("reverseColumnLookup");
-        int col = 0;
-        char expResult = ' ';
-        char result = Coordinate.reverseColumnLookup(col);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of toString method, of class Coordinate.
-     */
-    @Test
-    public void testToString() {
-        System.out.println("toString");
-        Coordinate instance = null;
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    /*
+    
+    DONT NEED COLUMN LOOKUP OR TO STRING BECUASE WE ARE USING A GUI
+    */
     
 }

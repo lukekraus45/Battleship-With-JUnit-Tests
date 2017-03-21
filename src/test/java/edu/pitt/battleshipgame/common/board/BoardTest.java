@@ -256,46 +256,12 @@ public class BoardTest {
         
     }
 
+    /*
     
+    GUI IS USED SO TO STRING IS NOT NEEDED TO BE TESTED 
+    
+    */
 
-    /**
-     * Test of toString method, of class Board.
-     */
-    @Test
-    public void testToString_true() {
-        //System.out.println("toString");
-       
-        Board instance = new Board("test");
-        Coordinate coord = Mockito.mock(Coordinate.class);
-        when(coord.getRow()).thenReturn(5);
-        when(coord.getCol()).thenReturn(5);
-        //add cruiser 
-        Ship ship = Mockito.mock(Ship.class);
-        when(ship.getType()).thenReturn(Ship.ShipType.CRUISER);
-        when(ship.maxAllowed()).thenReturn(1);
-        instance.addShip(ship);
-        String expResult = "";
-        String result = instance.toString(true);
-        System.out.println("RESULT " + result);
-        assertEquals(expResult, result);
-        
-    }
     
-     @Test
-    public void testToString_false() {
-        Board instance = new Board("test");
-        Coordinate coord = Mockito.mock(Coordinate.class);
-        when(coord.getRow()).thenReturn(1);
-        when(coord.getCol()).thenReturn(1);
-        //add cruiser 
-        Ship ship = Mockito.mock(Ship.class);
-        when(ship.getType()).thenReturn(Ship.ShipType.CRUISER);
-        when(ship.maxAllowed()).thenReturn(1);
-        instance.addShip(ship);
-        String expResult = "";
-        String result = instance.toString(true);
-        System.out.println("RESULT " + result);
-        assertEquals(expResult, result);
-    }
     
 }
