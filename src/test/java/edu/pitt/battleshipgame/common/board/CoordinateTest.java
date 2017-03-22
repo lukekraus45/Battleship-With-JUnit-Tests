@@ -38,22 +38,22 @@ public class CoordinateTest {
     }
 
     /**
-     * Test of setCoordinates method, of class Coordinate.
+     * Test of setCoordinates method, of class Coordinate. Creates a new coordinate that is 2,2. It then sets its coordinates to a:1 (0,0). It then tests to see if this change
+     * worked properly. If it did the test will pass. 
      */
     @Test
     public void testSetCoordinates() {
        
         Coordinate instance = new Coordinate(0,0);
-        
         Coordinate test = new Coordinate(2,2);
         test.setCoordinates("a:1");
-        //System.out.println("test " + test.toString() + "instance " + instance.toString());
         assertEquals(test.toString(),instance.toString());
        
     }
 
     /**
-     * Test of setCol method, of class Coordinate.
+     * Test of setCol method, of class Coordinate. Creates a new coordinate 5,5. Sets the col to 0. If the column is set to 0 then return true else return false. If it is true we know 
+     * it is working, else the test will fail. 
      */
     @Test
     public void testSetCol() {
@@ -69,7 +69,7 @@ public class CoordinateTest {
     }
 
     /**
-     * Test of setRow method, of class Coordinate.
+     * Test of setRow method, of class Coordinate. Same as setCol except for row. 
      */
     @Test
     public void testSetRow() {
@@ -84,7 +84,7 @@ public class CoordinateTest {
     }
 
     /**
-     * Test of getRow method, of class Coordinate.
+     * Test of getRow method, of class Coordinate. Creates a new coordinate with a row value of 4. If the row is 4 when getRow is called the test passes.
      */
     @Test
     public void testGetRow() {
@@ -99,7 +99,7 @@ public class CoordinateTest {
     }
 
     /**
-     * Test of getCol method, of class Coordinate.
+     * Test of getCol method, of class Coordinate. Same as getRow except for Col
      */
     @Test
     public void testGetCol() {

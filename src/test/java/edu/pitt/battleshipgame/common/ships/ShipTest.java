@@ -92,7 +92,7 @@ public class ShipTest {
         String expResult = "[5,5]";
         
 
-    /**
+    
         Coordinate result = instance.getEnd();
         assertEquals(expResult, result.toString());
     }
@@ -101,27 +101,55 @@ public class ShipTest {
      * Test of isSunk method, of class Ship.
      */
     @Test
-    public void testIsSunk() {
-        System.out.println("isSunk");
-        Ship instance = null;
+    public void testIsSunkFalse() {                                                                                        
+        when(start.getRow()).thenReturn(5);
+        when(start.getCol()).thenReturn(5);
+        when(end.getRow()).thenReturn(5);
+        when(end.getCol()).thenReturn(5);
+        
+        Ship instance = new Battleship(start, end);
+         
         boolean expResult = false;
         boolean result = instance.isSunk();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
-
+    
+  @Test   
+  public void testIsSunkTrue() {                                                                                        
+        when(start.getRow()).thenReturn(5);
+        when(start.getCol()).thenReturn(5);
+        when(end.getRow()).thenReturn(5);
+        when(end.getCol()).thenReturn(5);
+        
+        Ship instance = new Battleship(start, end);
+        for(int i = 0; i < 4; i++){
+           instance.registerHit(); 
+        }
+        boolean expResult = true;
+        boolean result = instance.isSunk();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
     /**
      * Test of addBoard method, of class Ship.
      */
     @Test
     public void testAddBoard() {
-        System.out.println("addBoard");
-        Board board = null;
-        Ship instance = null;
+        Board board = Mockito.mock(Board.class);
+        when(start.getRow()).thenReturn(5);
+        when(start.getCol()).thenReturn(5);
+        when(end.getRow()).thenReturn(5);
+        when(end.getCol()).thenReturn(5);
+        
+        
+        Ship instance = new Battleship(start,end);
         instance.addBoard(board);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotNull(instance.getBoard());
+        
+        
     }
 
     /**
@@ -129,39 +157,54 @@ public class ShipTest {
      */
     @Test
     public void testRegisterHit() {
-        System.out.println("registerHit");
-        Ship instance = null;
+        when(start.getRow()).thenReturn(5);
+        when(start.getCol()).thenReturn(5);
+        when(end.getRow()).thenReturn(5);
+        when(end.getCol()).thenReturn(5);
+        Ship instance = new Battleship(start,end);
         instance.registerHit();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        assertEquals(instance.getHitCount(), 1);
     }
 
     /**
      * Test of isValid method, of class Ship.
      */
     @Test
-    public void testIsValid() {
-        System.out.println("isValid");
-        Ship instance = null;
+    public void testIsValidFalse() {
+        when(start.getRow()).thenReturn(5);
+        when(start.getCol()).thenReturn(5);
+        when(end.getRow()).thenReturn(5);
+        when(end.getCol()).thenReturn(5);
+        Ship instance = new Battleship(start,end);
         boolean expResult = false;
         boolean result = instance.isValid();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
-
+    @Test
+    public void testIsValidTrue() {
+        when(start.getRow()).thenReturn(5);
+        when(start.getCol()).thenReturn(5);
+        when(end.getRow()).thenReturn(5);
+        when(end.getCol()).thenReturn(2);
+        Ship instance = new Battleship(start,end);
+        boolean expResult = true;
+        boolean result = instance.isValid();
+        assertEquals(expResult, result);
+        
+    }
     /**
      * Test of getLength method, of class Ship.
      */
     @Test
     public void testGetLength() {
-        System.out.println("getLength");
-        Ship instance = null;
-        int expResult = 0;
+        
+        Ship instance = new Battleship(start,end);
+        int expResult = 4;
         int result = instance.getLength();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
 
     /**
@@ -169,13 +212,12 @@ public class ShipTest {
      */
     @Test
     public void testMaxAllowed() {
-        System.out.println("maxAllowed");
-        Ship instance = null;
-        int expResult = 0;
+
+        Ship instance = new Battleship(start,end);
+        int expResult = 1;
         int result = instance.maxAllowed();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -183,13 +225,12 @@ public class ShipTest {
      */
     @Test
     public void testGetName() {
-        System.out.println("getName");
-        Ship instance = null;
-        String expResult = "";
+        
+        Ship instance = new Battleship(start,end);
+        String expResult = "Battleship";
         String result = instance.getName();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -197,13 +238,12 @@ public class ShipTest {
      */
     @Test
     public void testGetType() {
-        System.out.println("getType");
-        Ship instance = null;
-        Ship.ShipType expResult = null;
+
+        Ship instance = new Battleship(start, end);
+        Ship.ShipType expResult = Ship.ShipType.BATTLESHIP;
         Ship.ShipType result = instance.getType();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     public class ShipImpl extends Ship {

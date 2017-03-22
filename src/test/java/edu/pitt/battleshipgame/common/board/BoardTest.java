@@ -22,7 +22,11 @@ import org.mockito.Mockito;
  * @author Luke
  */
 public class BoardTest {
+   
     
+    Coordinate start = Mockito.mock(Coordinate.class);
+    Coordinate end = Mockito.mock(Coordinate.class);
+    Ship ship = Mockito.mock(Ship.class);
     public BoardTest() {
     }
     
@@ -45,11 +49,16 @@ public class BoardTest {
     /**
      * Test of getLastMove method, of class Board.
      */
+    
+    /*
+    Tests get last move for the Board test. This is done by adding a mock of the coordinate and then making that move on the board. 
+    Then it is compared to the result of actually making the move. If they are equal then the test passes
+    */
     @Test
     public void testGetLastMove() {
         
         Board instance = new Board("test");
-        Coordinate coord = new Coordinate(5,5);
+        Coordinate coord = start;
         instance.makeMove(coord);
         Coordinate result = instance.getLastMove();     
         assertEquals(result, coord );
@@ -58,7 +67,8 @@ public class BoardTest {
     }
 
     /**
-     * Test of getName method, of class Board.
+     * Test of getName method, of class Board. Creates a new board with a name. Then calls the getName method and if they are equal it passes 
+     
      */
     @Test
     public void testGetName() {
@@ -72,7 +82,8 @@ public class BoardTest {
     }
 
     /**
-     * Test of getMoves method, of class Board.
+     * Test of getMoves method, of class Board. Creates a new board and returns a list of all of its moves. Then a 2D array is created. These 2 are 
+     * compared with each other making sure that they are equal. If every value is the same then return true
      */
     @Test
     public void testGetMoves() {
@@ -95,12 +106,12 @@ public class BoardTest {
     }
 
     /**
-     * Test of addShip method, of class Board.
+     * Test of addShip method, of class Board. Creates a new board and then uses a fake to create a Battleship object. This is then added to the board. If the shiplist is false 
+     * then it should pass, as there is now a ship in the list
      */
     @Test
     public void testAddBattleShip() {
         //System.out.println("addShip");
-        Ship ship = Mockito.mock(Ship.class);
         Board instance = new Board("test");
         
         when(ship.getType()).thenReturn(Ship.ShipType.BATTLESHIP);
@@ -111,10 +122,14 @@ public class BoardTest {
         assertFalse(instance.getShipList().isEmpty());
     }
 
+    
+    /**
+     * Test of addShip method, of class Board. Creates a new board and then uses a fake to create a Carrier object. This is then added to the board. If the shiplist is false 
+     * then it should pass, as there is now a ship in the list
+     */
         @Test
     public void testAddCarrier() {
         //System.out.println("addShip");
-        Ship ship = Mockito.mock(Ship.class);
         Board instance = new Board("test");
         
         when(ship.getType()).thenReturn(Ship.ShipType.CARRIER);
@@ -125,10 +140,14 @@ public class BoardTest {
         assertFalse(instance.getShipList().isEmpty());
     }
     
+    /**
+     * Test of addShip method, of class Board. Creates a new board and then uses a fake to create a Cruiser object. This is then added to the board. If the shiplist is false 
+     * then it should pass, as there is now a ship in the list
+     */
+    
         @Test
     public void testAddCruiser() {
         //System.out.println("addShip");
-        Ship ship = Mockito.mock(Ship.class);
         Board instance = new Board("test");
         
         when(ship.getType()).thenReturn(Ship.ShipType.CRUISER);
@@ -139,97 +158,88 @@ public class BoardTest {
         assertFalse(instance.getShipList().isEmpty());
     }
     
+    /**
+     * Test of addShip method, of class Board. Creates a new board and then uses a fake to create a Destroyer object. This is then added to the board. If the shiplist is false 
+     * then it should pass, as there is now a ship in the list
+     */
         @Test
     public void testAddDestroyer() {
-        //System.out.println("addShip");
-        Ship ship = Mockito.mock(Ship.class);
         Board instance = new Board("test");
-        
         when(ship.getType()).thenReturn(Ship.ShipType.DESTROYER);
         when(ship.maxAllowed()).thenReturn(1);
         instance.addShip(ship);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
         assertFalse(instance.getShipList().isEmpty());
     }
     
+    /**
+     * Test of addShip method, of class Board. Creates a new board and then uses a fake to create a Submarine object. This is then added to the board. If the shiplist is false 
+     * then it should pass, as there is now a ship in the list
+     */
+    
         @Test
     public void testAddSubmarine() {
-        //System.out.println("addShip");
-        Ship ship = Mockito.mock(Ship.class);
+
         Board instance = new Board("test");
-        
         when(ship.getType()).thenReturn(Ship.ShipType.SUBMARINE);
         when(ship.maxAllowed()).thenReturn(1);
         instance.addShip(ship);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
         assertFalse(instance.getShipList().isEmpty());
     }
     /**
-     * Test of makeMove method, of class Board.
+     * Test of makeMove method, of class Board. Creates a mock of coordinate and then fakes its method for getRow and Col. The board then adds the moves .If the location of the 
+     * array is true, then the test will pass. 
      */
     @Test
     public void testMakeMove() {
-        //System.out.println("makeMove");
         Coordinate move = Mockito.mock(Coordinate.class);
         Board instance = new Board("test");
-        
         when(move.getRow()).thenReturn(1);
         when(move.getCol()).thenReturn(1);
         instance.makeMove(move);
         boolean[][] moves = instance.getMoves();
         assertTrue(moves[1][1]);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        
     }
 
     /**
-     * Test of canShipFit method, of class Board.
+     * Test of canShipFit method, of class Board. Creates a new board and fakes the ship method to create a submarine. It will then run the CanShip method to see if 
+     * it can fit. If it returns true the test will pass. 
      */
     @Test
     public void testCanShipFit() {
-        //System.out.println("canShipFit");
-        Ship ship = Mockito.mock(Ship.class);
+     
         Board instance = new Board("test");
-        
         when(ship.getType()).thenReturn(Ship.ShipType.SUBMARINE);
         when(ship.maxAllowed()).thenReturn(1);
         boolean can_fit = instance.canShipFit(ship);
         assertTrue(can_fit);
         
-        
-        
-        
-        
     }
 
     /**
-     * Test of getShipList method, of class Board.
+     * Test of getShipList method, of class Board. Creates a new board and then adds a ship. If the ship list is not null then there will be something in the shiplist so it will pass
      */
     @Test
     public void testGetShipList() {
         
         Board instance = new Board("test");
-        //List<Ship> expResult = null;
-        Ship ship = Mockito.mock(Ship.class);
         when(ship.getType()).thenReturn(Ship.ShipType.SUBMARINE);
         when(ship.maxAllowed()).thenReturn(1);
         instance.addShip(ship);
         List<Ship> result = instance.getShipList();
-        System.out.println("RESULT!!!! " + result.toString());
         assertNotNull(result);
         
     }
 
     /**
-     * Test of areAllShipsSunk method, of class Board.
+     * Test of areAllShipsSunk method, of class Board. This tests the false version of seeing if all ships are sunk. It creates a new board and then adds a cruiser to the board.
+     * Then it sees if all ships are sunk (which will be false). If it is false, then it will pass
      */
     @Test
     public void testAreAllShipsSunkFalse() {
         //System.out.println("areAllShipsSunk");
         Board instance = new Board("test");
-        Ship ship = Mockito.mock(Ship.class);
+        
         when(ship.getType()).thenReturn(Ship.ShipType.CRUISER);
         when(ship.maxAllowed()).thenReturn(1);
         instance.addShip(ship);
@@ -237,15 +247,16 @@ public class BoardTest {
         boolean expResult = false;
         boolean result = instance.areAllShipsSunk();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+       
     }
-    
+    /**
+     * Tests to see if all ships are sunk true. Creates a fake method in the ship method that says it is sunk. If this works then the test will pass because the cruiser that 
+     * was added is now sunk (which is our only ship) 
+     */
     @Test
     public void testAreAllShipsSunkTrue() {
         //System.out.println("areAllShipsSunk");
         Board instance = new Board("test");
-        Ship ship = Mockito.mock(Ship.class);
         when(ship.getType()).thenReturn(Ship.ShipType.CRUISER);
         when(ship.maxAllowed()).thenReturn(1);
         instance.addShip(ship);

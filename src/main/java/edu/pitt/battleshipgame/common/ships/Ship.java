@@ -90,7 +90,13 @@ public abstract class Ship implements Serializable {
     public void registerHit() {
         hitCount++;
     }
-    
+    public int getHitCount(){
+        
+        return hitCount;
+    }
+    public Board getBoard(){
+        return this.myBoard;
+    }
     public boolean isValid()
     {
         int x1 = this.start.getCol();
