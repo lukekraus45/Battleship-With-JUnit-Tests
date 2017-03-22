@@ -42,7 +42,7 @@ public class ShipFactoryTest {
     }
     
     /**
-     * Test of newShipFromType method, of class ShipFactory.
+     * Test of newShipFromType method, of class ShipFactory.  Creates a new battleship from the shipfactory. Tests the start value to make sure it is properly setting this value
      */
     @Test
     public void testNewShipFromTypeBattleship_start() {
@@ -54,7 +54,9 @@ public class ShipFactoryTest {
         assertEquals(expResult.start, result.start);
         
     }
-    
+    /**
+     * Test of newShipFromType method, of class ShipFactory.  Creates a new Carrier from the shipfactory. Tests the start value to make sure it is properly setting this value
+     */
      @Test
       public void testNewShipFromTypeCarrier_start() {
         when(start.getCol()).thenReturn(5);
@@ -65,6 +67,9 @@ public class ShipFactoryTest {
         assertEquals(expResult.start, result.start);
         
     }
+      /**
+     * Test of newShipFromType method, of class ShipFactory.  Creates a new Cruiser from the shipfactory. Tests the start value to make sure it is properly setting this value
+     */
        @Test
         public void testNewShipFromTypeCruiser_start() {
         when(start.getCol()).thenReturn(5);
@@ -75,6 +80,9 @@ public class ShipFactoryTest {
         assertEquals(expResult.start, result.start);
         
     }
+        /**
+     * Test of newShipFromType method, of class ShipFactory.  Creates a new Destroyer from the shipfactory. Tests the start value to make sure it is properly setting this value
+     */
        @Test  
       public void testNewShipFromTypeDestroyer_start() {
         when(start.getCol()).thenReturn(5);
@@ -85,6 +93,9 @@ public class ShipFactoryTest {
         assertEquals(expResult.start, result.start);
         
     }
+      /**
+     * Test of newShipFromType method, of class ShipFactory.  Creates a new Destroyer from the shipfactory. Tests the start value to make sure it is properly setting this value
+     */
          @Test  
         public void testNewShipFromTypeSubmarine_start() {
         when(start.getCol()).thenReturn(5);
@@ -96,7 +107,9 @@ public class ShipFactoryTest {
         
     }
 
-        
+    /**
+     * Test of newShipFromType method, of class ShipFactory.  Creates a new battleship from the shipfactory. Tests the ebd value to make sure it is properly setting this value
+     */    
     @Test
     public void testNewShipFromTypeBattleship_end() {
         when(start.getCol()).thenReturn(5);
@@ -107,7 +120,9 @@ public class ShipFactoryTest {
         assertEquals(expResult.end, result.end);
         
     }
-    
+        /**
+     * Test of newShipFromType method, of class ShipFactory.  Creates a new Carrier from the shipfactory. Tests the ebd value to make sure it is properly setting this value
+     */    
      @Test
       public void testNewShipFromTypeCarrier_end() {
         when(start.getCol()).thenReturn(5);
@@ -118,6 +133,9 @@ public class ShipFactoryTest {
         assertEquals(expResult.end, result.end);
         
     }
+          /**
+     * Test of newShipFromType method, of class ShipFactory.  Creates a new Cruiser from the shipfactory. Tests the ebd value to make sure it is properly setting this value
+     */    
        @Test
         public void testNewShipFromTypeCruiser_end() {
         when(start.getCol()).thenReturn(5);
@@ -128,6 +146,9 @@ public class ShipFactoryTest {
         assertEquals(expResult.end, result.end);
         
     }
+            /**
+     * Test of newShipFromType method, of class ShipFactory.  Creates a new Destroyer from the shipfactory. Tests the ebd value to make sure it is properly setting this value
+     */    
        @Test  
       public void testNewShipFromTypeDestroyer_end() {
         when(start.getCol()).thenReturn(5);
@@ -138,6 +159,9 @@ public class ShipFactoryTest {
         assertEquals(expResult.end, result.end);
         
     }
+          /**
+     * Test of newShipFromType method, of class ShipFactory.  Creates a new Submarine from the shipfactory. Tests the ebd value to make sure it is properly setting this value
+     */    
          @Test  
         public void testNewShipFromTypeSubmarine_end() {
         when(start.getCol()).thenReturn(5);
@@ -149,7 +173,9 @@ public class ShipFactoryTest {
         
     }
         
-        
+            /**
+     * Test of newShipFromType method, of class ShipFactory.  Creates a new battleship from the shipfactory. Tests the name value to make sure it is properly setting this value
+     */    
          @Test
     public void testNewShipFromTypeBattleship_name() {
         when(start.getCol()).thenReturn(5);
@@ -160,7 +186,9 @@ public class ShipFactoryTest {
         assertEquals(expResult.getName(), result.getName());
         
     }
-    
+             /**
+     * Test of newShipFromType method, of class ShipFactory.  Creates a new Carrier from the shipfactory. Tests the name value to make sure it is properly setting this value
+     */   
      @Test
       public void testNewShipFromTypeCarrier_name() {
         when(start.getCol()).thenReturn(5);
@@ -171,6 +199,9 @@ public class ShipFactoryTest {
         assertEquals(expResult.getName(), result.getName());
         
     }
+               /**
+     * Test of newShipFromType method, of class ShipFactory.  Creates a new Cruiser from the shipfactory. Tests the name value to make sure it is properly setting this value
+     */   
        @Test
         public void testNewShipFromTypeCruiser_name() {
         when(start.getCol()).thenReturn(5);
@@ -181,6 +212,9 @@ public class ShipFactoryTest {
         assertEquals(expResult.getName(), result.getName());
         
     }
+                 /**
+     * Test of newShipFromType method, of class ShipFactory.  Creates a new Destroyer from the shipfactory. Tests the name value to make sure it is properly setting this value
+     */   
        @Test  
       public void testNewShipFromTypeDestroyer_name() {
         when(start.getCol()).thenReturn(5);
@@ -191,6 +225,9 @@ public class ShipFactoryTest {
         assertEquals(expResult.getName(), result.getName());
         
     }
+               /**
+     * Test of newShipFromType method, of class ShipFactory.  Creates a new Submarine from the shipfactory. Tests the name value to make sure it is properly setting this value
+     */   
          @Test  
         public void testNewShipFromTypeSubmarine_name() {
         when(start.getCol()).thenReturn(5);
@@ -206,7 +243,7 @@ public class ShipFactoryTest {
         
         
     /**
-     * Test of maxAllowedFromType method, of class ShipFactory.
+     * Test of maxAllowedFromType method, of class ShipFactory. Tests the max number of battleships that are allowed 
      */
     @Test
     public void testMaxAllowedFromTypeBattleship() {
@@ -218,6 +255,9 @@ public class ShipFactoryTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+        /**
+     * Test of maxAllowedFromType method, of class ShipFactory. Tests the max number of carriers that are allowed 
+     */
      @Test
     public void testMaxAllowedFromTypeCarrier() {
         //System.out.println("maxAllowedFromType");
@@ -228,6 +268,9 @@ public class ShipFactoryTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+        /**
+     * Test of maxAllowedFromType method, of class ShipFactory. Tests the max number of Cruiser that are allowed 
+     */
      @Test
     public void testMaxAllowedFromTypeCruiser() {
         //System.out.println("maxAllowedFromType");
@@ -238,6 +281,9 @@ public class ShipFactoryTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+        /**
+     * Test of maxAllowedFromType method, of class ShipFactory. Tests the max number of Destroyer that are allowed 
+     */
      @Test
     public void testMaxAllowedFromTypeDestroyer() {
         //System.out.println("maxAllowedFromType");
@@ -248,6 +294,9 @@ public class ShipFactoryTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+        /**
+     * Test of maxAllowedFromType method, of class ShipFactory. Tests the max number of Submarine that are allowed 
+     */
      @Test
     public void testMaxAllowedFromTypeSubmarine() {
         //System.out.println("maxAllowedFromType");
@@ -260,7 +309,7 @@ public class ShipFactoryTest {
     }
 
     /**
-     * Test of getNameFromType method, of class ShipFactory.
+     * Test of getNameFromType method, of class ShipFactory. Tests the get name for Battleship. 
      */
     @Test
     public void testGetNameFromTypeBattlship() {
@@ -271,6 +320,9 @@ public class ShipFactoryTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+       /**
+     * Test of getNameFromType method, of class ShipFactory. Tests the get name for Carrier. 
+     */
       @Test
     public void testGetNameFromTypeCarrier() {
         Ship.ShipType type = Ship.ShipType.CARRIER;
@@ -280,6 +332,9 @@ public class ShipFactoryTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+       /**
+     * Test of getNameFromType method, of class ShipFactory. Tests the get name for Cruiser. 
+     */
       @Test
     public void testGetNameFromTypeCruiser() {
         Ship.ShipType type = Ship.ShipType.CRUISER;
@@ -289,6 +344,9 @@ public class ShipFactoryTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+       /**
+     * Test of getNameFromType method, of class ShipFactory. Tests the get name for Destroyer. 
+     */
       @Test
     public void testGetNameFromTypeDestroyer() {
         Ship.ShipType type = Ship.ShipType.DESTROYER;
@@ -298,6 +356,9 @@ public class ShipFactoryTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+       /**
+     * Test of getNameFromType method, of class ShipFactory. Tests the get name for Submarine. 
+     */
       @Test
     public void testGetNameFromTypeSubmarine() {
         Ship.ShipType type = Ship.ShipType.SUBMARINE;

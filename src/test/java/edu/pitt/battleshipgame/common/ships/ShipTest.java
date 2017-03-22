@@ -46,7 +46,7 @@ public class ShipTest {
     }
 
     /**
-     * Test of getCoordinates method, of class Ship.
+     * Test of getCoordinates method, of class Ship. Tests the get coordinates. Checks it by converting it to a string and comparing it against the expected value
      */
     @Test
     public void testGetCoordinates() {
@@ -62,7 +62,7 @@ public class ShipTest {
     }
 
     /**
-     * Test of getStart method, of class Ship.
+     * Test of getStart method, of class Ship. Tests the value of the get start coodrinate. Converts it to a string and then compares it against the expected
      */
     @Test
     public void testGetStart() {
@@ -80,7 +80,7 @@ public class ShipTest {
     }
 
     /**
-     * Test of getEnd method, of class Ship.
+     * Test of getEnd method, of class Ship. Same as getStart except for getEnd
      */
     @Test
     public void testGetEnd() {
@@ -98,7 +98,7 @@ public class ShipTest {
     }
 
     /**
-     * Test of isSunk method, of class Ship.
+     * Test of isSunk method, of class Ship. Checks if the ship is sunk when it is false. It does this by testing a not sunk ship and assserting that is false
      */
     @Test
     public void testIsSunkFalse() {                                                                                        
@@ -115,6 +115,9 @@ public class ShipTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+    /*
+    Same as testIsSunkFalse except it is testing when it is true. It will sink a ship then test if it is sunk. 
+    */
     
   @Test   
   public void testIsSunkTrue() {                                                                                        
@@ -134,7 +137,7 @@ public class ShipTest {
         //fail("The test case is a prototype.");
     }
     /**
-     * Test of addBoard method, of class Ship.
+     * Test of addBoard method, of class Ship. Tests adding a board by making sure that it is not null after it is added. 
      */
     @Test
     public void testAddBoard() {
@@ -153,7 +156,7 @@ public class ShipTest {
     }
 
     /**
-     * Test of registerHit method, of class Ship.
+     * Test of registerHit method, of class Ship. Tests to see if the ship that is added properly adds a hit. Does this by checking the hitCount
      */
     @Test
     public void testRegisterHit() {
@@ -168,7 +171,7 @@ public class ShipTest {
     }
 
     /**
-     * Test of isValid method, of class Ship.
+     * Test of isValid method, of class Ship. Checks to see if the ship value is valid. this check is to see what happens when it is false
      */
     @Test
     public void testIsValidFalse() {
@@ -182,6 +185,9 @@ public class ShipTest {
         assertEquals(expResult, result);
         
     }
+    /**
+     * Test of isValid method, of class Ship. Checks to see if the ship value is valid. this check is to see what happens when it is true
+     */
     @Test
     public void testIsValidTrue() {
         when(start.getRow()).thenReturn(5);
@@ -195,7 +201,7 @@ public class ShipTest {
         
     }
     /**
-     * Test of getLength method, of class Ship.
+     * Test of getLength method, of class Ship. Checks a battleship to see if the length is correct
      */
     @Test
     public void testGetLength() {
@@ -208,7 +214,7 @@ public class ShipTest {
     }
 
     /**
-     * Test of maxAllowed method, of class Ship.
+     * Test of maxAllowed method, of class Ship. Checks a battleship to see if the max allowed is 1
      */
     @Test
     public void testMaxAllowed() {
@@ -221,7 +227,7 @@ public class ShipTest {
     }
 
     /**
-     * Test of getName method, of class Ship.
+     * Test of getName method, of class Ship. Tests a battleship to see if it propperly returns its name
      */
     @Test
     public void testGetName() {
@@ -234,7 +240,7 @@ public class ShipTest {
     }
 
     /**
-     * Test of getType method, of class Ship.
+     * Test of getType method, of class Ship. Checks the type of a battleship to see if it is BATTLESHIP
      */
     @Test
     public void testGetType() {

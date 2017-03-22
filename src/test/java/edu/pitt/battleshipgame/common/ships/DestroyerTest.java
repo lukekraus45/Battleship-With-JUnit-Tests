@@ -21,6 +21,8 @@ import static org.mockito.Mockito.when;
  */
 public class DestroyerTest {
     
+   Coordinate start = Mockito.mock(Coordinate.class);
+   Coordinate end = Mockito.mock(Coordinate.class);
     public DestroyerTest() {
     }
     
@@ -41,17 +43,14 @@ public class DestroyerTest {
     }
 
     /**
-     * Test of getLength method, of class Destroyer.
+     * Test of getLength method, of class Destroyer. Checks to make sure that the Destroyer is of length 2
      */
     @Test
     public void testGetLength() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
         when(end.getRow()).thenReturn(5);
-        
         Destroyer instance = new Destroyer(start,end);
         int expResult = 2;
         int result = instance.getLength();
@@ -60,17 +59,14 @@ public class DestroyerTest {
     }
 
     /**
-     * Test of maxAllowed method, of class Destroyer.
+     * Test of maxAllowed method, of class Destroyer. Makes sure that the max number of Destroyers that can be on the board is 1
      */
     @Test
     public void testMaxAllowed() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
         when(end.getRow()).thenReturn(5);
-        
         Destroyer instance = new Destroyer(start,end);
         int expResult = 1;
         int result = instance.maxAllowed();
@@ -78,17 +74,14 @@ public class DestroyerTest {
     }
 
     /**
-     * Test of getName method, of class Destroyer.
+     * Test of getName method, of class Destroyer.Checks to make sure that the Destroyer will return "Destroyer" when the getName() is called
      */
     @Test
     public void testGetName() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
         when(end.getRow()).thenReturn(5);
-        
         Destroyer instance = new Destroyer(start,end);
         String expResult = "Destroyer";
         String result = instance.getName();
@@ -96,17 +89,14 @@ public class DestroyerTest {
     }
 
     /**
-     * Test of getType method, of class Destroyer.
+     * Test of getType method, of class Destroyer. Checks to make sure that the destroyer will return ShipType of DESTROYER 
      */
     @Test
     public void testGetType() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
         when(end.getRow()).thenReturn(5);
-        
         Destroyer instance = new Destroyer(start,end);
         Ship.ShipType expResult = Ship.ShipType.DESTROYER;
         Ship.ShipType result = instance.getType();

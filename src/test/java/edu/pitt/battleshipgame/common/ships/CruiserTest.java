@@ -21,6 +21,8 @@ import static org.mockito.Mockito.when;
  */
 public class CruiserTest {
     
+    Coordinate start = Mockito.mock(Coordinate.class);
+    Coordinate end = Mockito.mock(Coordinate.class);
     public CruiserTest() {
     }
     
@@ -41,17 +43,15 @@ public class CruiserTest {
     }
 
     /**
-     * Test of getLength method, of class Cruiser.
+     * Test of getLength method, of class Cruiser. Checks to make sure that the length of Cruiser is 3
      */
     @Test
     public void testGetLength() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
+  
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
         when(end.getRow()).thenReturn(5);
-        
         Cruiser instance = new Cruiser(start,end);
         int expResult = 3;
         int result = instance.getLength();
@@ -60,17 +60,14 @@ public class CruiserTest {
     }
 
     /**
-     * Test of maxAllowed method, of class Cruiser.
+     * Test of maxAllowed method, of class Cruiser. Checks to make sure that the max number of Cruisers on the board is 1
      */
     @Test
     public void testMaxAllowed() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
         when(end.getRow()).thenReturn(5);
-        
         Cruiser instance = new Cruiser(start,end);
         int expResult = 1;
         int result = instance.maxAllowed();
@@ -78,17 +75,14 @@ public class CruiserTest {
     }
 
     /**
-     * Test of getName method, of class Cruiser.
+     * Test of getName method, of class Cruiser. Checks to make sure that the getName method will return "Cruiser" for this class
      */
     @Test
     public void testGetName() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
         when(end.getRow()).thenReturn(5);
-        
         Cruiser instance = new Cruiser(start,end);
         String expResult = "Cruiser";
         String result = instance.getName();
@@ -96,17 +90,14 @@ public class CruiserTest {
     }
 
     /**
-     * Test of getType method, of class Cruiser.
+     * Test of getType method, of class Cruiser. Checks to make sure that that the ShipType for the Cruiser class is CRUISER
      */
     @Test
     public void testGetType() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
         when(end.getRow()).thenReturn(5);
-        
         Cruiser instance = new Cruiser(start,end);
         Ship.ShipType expResult = Ship.ShipType.CRUISER;
         Ship.ShipType result = instance.getType();

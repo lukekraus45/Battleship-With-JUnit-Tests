@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="58" failures="0" name="edu.pitt.battleshipgame.common.ships.ShipsSuite" time="0.442" errors="0" skipped="0">
+<testsuite tests="58" failures="0" name="edu.pitt.battleshipgame.common.ships.ShipsSuite" time="0.566" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.8.0_60\jre\bin"/>
@@ -62,21 +62,21 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testGetStart" time="0.029"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testGetStart" time="0.039"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testIsSunkFalse" time="0"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testIsValidFalse" time="0"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testIsValidTrue" time="0"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testAddBoard" time="0.017"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testIsValidFalse" time="0.001"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testIsValidTrue" time="0.001"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testAddBoard" time="0.015"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testGetName" time="0"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testGetType" time="0"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testMaxAllowed" time="0"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testGetCoordinates" time="0.001"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testGetCoordinates" time="0.002"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testIsSunkTrue" time="0.001"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testGetLength" time="0"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testGetEnd" time="0.001"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testRegisterHit" time="0"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.CruiserTest" name="testGetName" time="0.001"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.CruiserTest" name="testGetType" time="0.001"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipTest" name="testRegisterHit" time="0.003"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.CruiserTest" name="testGetName" time="0"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.CruiserTest" name="testGetType" time="0"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.CruiserTest" name="testMaxAllowed" time="0.001"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.CruiserTest" name="testGetLength" time="0.001"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.SubmarineTest" name="testGetName" time="0.001"/>
@@ -84,15 +84,15 @@
   <testcase classname="edu.pitt.battleshipgame.common.ships.SubmarineTest" name="testMaxAllowed" time="0.001"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.SubmarineTest" name="testGetLength" time="0.001"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.BattleshipTest" name="testGetName" time="0"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.BattleshipTest" name="testGetType" time="0.002"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.BattleshipTest" name="testGetType" time="0.001"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.BattleshipTest" name="testMaxAllowed" time="0.001"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.BattleshipTest" name="testGetLength" time="0.001"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.BattleshipTest" name="testGetLength" time="0"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.DestroyerTest" name="testGetName" time="0.001"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.DestroyerTest" name="testGetType" time="0.001"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.DestroyerTest" name="testGetType" time="0"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.DestroyerTest" name="testMaxAllowed" time="0.001"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.DestroyerTest" name="testGetLength" time="0"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.DestroyerTest" name="testGetLength" time="0.001"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testMaxAllowedFromTypeCarrier" time="0.002"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeCruiser_name" time="0"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeCruiser_name" time="0.001"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testMaxAllowedFromTypeCruiser" time="0"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testGetNameFromTypeBattlship" time="0"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testMaxAllowedFromTypeBattleship" time="0"/>
@@ -100,24 +100,24 @@
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeDestroyer_name" time="0"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeCruiser_end" time="0"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testGetNameFromTypeSubmarine" time="0"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeBattleship_end" time="0.001"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeBattleship_end" time="0"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeBattleship_name" time="0"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeCarrier_name" time="0"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testMaxAllowedFromTypeSubmarine" time="0"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeCarrier_name" time="0.001"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testMaxAllowedFromTypeSubmarine" time="0.001"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeDestroyer_end" time="0"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testGetNameFromTypeCarrier" time="0"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeSubmarine_end" time="0.003"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeSubmarine_name" time="0"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeSubmarine_end" time="0.002"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeSubmarine_name" time="0.001"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testGetNameFromTypeCruiser" time="0"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeCruiser_start" time="0.001"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeCruiser_start" time="0"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testGetNameFromTypeDestroyer" time="0"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeDestroyer_start" time="0.001"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeDestroyer_start" time="0"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeSubmarine_start" time="0.001"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testMaxAllowedFromTypeDestroyer" time="0"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeBattleship_start" time="0.001"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeCarrier_end" time="0"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.CarrierTest" name="testGetName" time="0"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.ShipFactoryTest" name="testNewShipFromTypeCarrier_end" time="0.001"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.CarrierTest" name="testGetName" time="0.001"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.CarrierTest" name="testGetType" time="0.001"/>
   <testcase classname="edu.pitt.battleshipgame.common.ships.CarrierTest" name="testMaxAllowed" time="0.001"/>
-  <testcase classname="edu.pitt.battleshipgame.common.ships.CarrierTest" name="testGetLength" time="0.001"/>
+  <testcase classname="edu.pitt.battleshipgame.common.ships.CarrierTest" name="testGetLength" time="0"/>
 </testsuite>

@@ -21,6 +21,8 @@ import static org.mockito.Mockito.when;
  */
 public class SubmarineTest {
     
+    Coordinate start = Mockito.mock(Coordinate.class);
+        Coordinate end = Mockito.mock(Coordinate.class);
     public SubmarineTest() {
     }
     
@@ -41,12 +43,11 @@ public class SubmarineTest {
     }
 
    /**
-     * Test of getLength method, of class Battleship.
+     * Test of getLength method, of class Submarine. 
      */
     @Test
     public void testGetLength() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
+        
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
@@ -64,8 +65,7 @@ public class SubmarineTest {
      */
     @Test
     public void testMaxAllowed() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
+       
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
@@ -82,8 +82,7 @@ public class SubmarineTest {
      */
     @Test
     public void testGetName() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
+        
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
@@ -100,8 +99,7 @@ public class SubmarineTest {
      */
     @Test
     public void testGetType() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
+       
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);

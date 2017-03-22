@@ -21,6 +21,9 @@ import static org.mockito.Mockito.when;
  */
 public class CarrierTest {
     
+    Coordinate start = Mockito.mock(Coordinate.class);
+    Coordinate end = Mockito.mock(Coordinate.class);
+    
     public CarrierTest() {
     }
     
@@ -41,17 +44,14 @@ public class CarrierTest {
     }
 
     /**
-     * Test of getLength method, of class Battleship.
+     * Test of getLength method, of class Carrier. Checks to make sure that the length of the carrier is 5. If it is then the test will pass
      */
     @Test
     public void testGetLength() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
         when(end.getRow()).thenReturn(5);
-        
         Carrier instance = new Carrier(start,end);
         int expResult = 5;
         int result = instance.getLength();
@@ -60,17 +60,14 @@ public class CarrierTest {
     }
 
     /**
-     * Test of maxAllowed method, of class Carrier.
+     * Test of maxAllowed method, of class Carrier. Checks to make sure that the max allowed of carrier is 1
      */
     @Test
     public void testMaxAllowed() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
         when(end.getRow()).thenReturn(5);
-        
         Carrier instance = new Carrier(start,end);
         int expResult = 1;
         int result = instance.maxAllowed();
@@ -78,17 +75,14 @@ public class CarrierTest {
     }
 
     /**
-     * Test of getName method, of class Carrier.
+     * Test of getName method, of class Carrier. Tests to make sure that the getName method of Carrier will return "Carrier". 
      */
     @Test
     public void testGetName() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
         when(end.getRow()).thenReturn(5);
-        
         Carrier instance = new Carrier(start,end);
         String expResult = "Carrier";
         String result = instance.getName();
@@ -96,17 +90,14 @@ public class CarrierTest {
     }
 
     /**
-     * Test of getType method, of class Carrier.
+     * Test of getType method, of class Carrier. Checks that the ShipType will return CARRIER
      */
     @Test
     public void testGetType() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
         when(end.getRow()).thenReturn(5);
-        
         Carrier instance = new Carrier(start,end);
         Ship.ShipType expResult = Ship.ShipType.CARRIER;
         Ship.ShipType result = instance.getType();

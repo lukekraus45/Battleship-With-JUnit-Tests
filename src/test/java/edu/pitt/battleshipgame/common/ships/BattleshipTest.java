@@ -22,11 +22,16 @@ import static org.mockito.Mockito.when;
  */
 public class BattleshipTest {
     
+    Coordinate start = Mockito.mock(Coordinate.class);
+    Coordinate end = Mockito.mock(Coordinate.class);
+    
+    
     public BattleshipTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
+    
     }
     
     @AfterClass
@@ -42,12 +47,11 @@ public class BattleshipTest {
     }
 
     /**
-     * Test of getLength method, of class Battleship.
+     * Test of getLength method, of class Battleship. Tests the getLength for battleship. If the returned value is 4 it passes
      */
     @Test
     public void testGetLength() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
+        
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
@@ -61,12 +65,11 @@ public class BattleshipTest {
     }
 
     /**
-     * Test of maxAllowed method, of class Battleship.
+     * Test of maxAllowed method, of class Battleship. Checks to make sure that the max allowed for Battleships is 1
      */
     @Test
     public void testMaxAllowed() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
+       
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
@@ -79,12 +82,11 @@ public class BattleshipTest {
     }
 
     /**
-     * Test of getName method, of class Battleship.
+     * Test of getName method, of class Battleship. Checks to make sure the getName for Battleship returns "Battleship".
      */
     @Test
     public void testGetName() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
+        
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
@@ -97,12 +99,11 @@ public class BattleshipTest {
     }
 
     /**
-     * Test of getType method, of class Battleship.
+     * Test of getType method, of class Battleship. Checks to make sure that the shipType is Battleship
      */
     @Test
     public void testGetType() {
-        Coordinate start = Mockito.mock(Coordinate.class);
-        Coordinate end = Mockito.mock(Coordinate.class);
+       
         when(start.getCol()).thenReturn(5);
         when(start.getRow()).thenReturn(5);
         when(end.getCol()).thenReturn(5);
