@@ -33,6 +33,9 @@ public abstract class Ship implements Serializable {
         this.end = end;
     }
     
+  
+    
+    
     public List<Coordinate> getCoordinates() {
         LinkedList coordinates = new LinkedList<Coordinate>();
         

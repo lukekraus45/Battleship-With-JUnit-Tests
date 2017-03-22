@@ -14,6 +14,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.mockito.Mockito;
+import static org.mockito.Mockito.when;
 
 /**
  *
@@ -21,6 +23,9 @@ import static org.junit.Assert.*;
  */
 public class ShipTest {
     
+    
+    Coordinate start = Mockito.mock(Coordinate.class);
+    Coordinate end = Mockito.mock(Coordinate.class);
     public ShipTest() {
     }
     
@@ -45,13 +50,15 @@ public class ShipTest {
      */
     @Test
     public void testGetCoordinates() {
-        System.out.println("getCoordinates");
-        Ship instance = null;
-        List<Coordinate> expResult = null;
+        when(start.getCol()).thenReturn(5);
+        when(start.getRow()).thenReturn(2);
+        when(end.getCol()).thenReturn(5);
+        when(end.getRow()).thenReturn(5);
+        Ship instance = new Battleship(start,end);
+        String expResult = "[f:3, f:4, f:5, f:6]";
         List<Coordinate> result = instance.getCoordinates();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result.toString());
+        
     }
 
     /**
@@ -59,13 +66,17 @@ public class ShipTest {
      */
     @Test
     public void testGetStart() {
-        System.out.println("getStart");
-        Ship instance = null;
-        Coordinate expResult = null;
+        when(start.getCol()).thenReturn(5);
+        when(start.getRow()).thenReturn(5);
+        when(start.toString()).thenReturn("[5,5]");
+                
+        Ship instance = new Battleship(start,end);
+        String expResult = "[5,5]";
+        
         Coordinate result = instance.getStart();
-        assertEquals(expResult, result);
+        assertEquals(expResult, result.toString());
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -73,13 +84,17 @@ public class ShipTest {
      */
     @Test
     public void testGetEnd() {
-        System.out.println("getEnd");
-        Ship instance = null;
-        Coordinate expResult = null;
+        when(end.getCol()).thenReturn(5);
+        when(end.getRow()).thenReturn(5);
+        when(end.toString()).thenReturn("[5,5]");
+                
+        Ship instance = new Battleship(start,end);
+        String expResult = "[5,5]";
+        
+
+    /**
         Coordinate result = instance.getEnd();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result.toString());
     }
 
     /**
